@@ -3,7 +3,7 @@ import tensorflow as tf
 
 
 #批处理只是每次取多少个数，跟队列，和数据数量没有影响
-
+#tesorflow csv读入函数
 def csvRead(filelist):
     #构造队列
     file_queue = tf.train.string_input_producer(filelist)
@@ -20,7 +20,7 @@ def csvRead(filelist):
     example_batch,label_batch=tf.train.batch([example,label],batch_size=9,num_threads=1,capacity=20)
 
     return example_batch,label_batch
-
+#tensorflow 图片读入函数
 def picRead(filelist):
     """
 
